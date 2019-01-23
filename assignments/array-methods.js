@@ -88,7 +88,14 @@ runners.forEach(runner => onlyEmails.push(runner.email));
 console.log(onlyEmails);
 // Problem 2 - Generate Email greeting and assign it to each email.
 let helloEmail = [];
-runners.map(runner => helloEmail.push([runner.email,`Hello ${runner.first_name}, Welcome to our monthly email.`]));
+//runners.map(runner => helloEmail.push([runner.email,`Hello ${runner.first_name}, Welcome to our monthly email.`]));
+runners.map(runner => {
+	let singleEmail = {
+		email: runner.email,
+		message: `Hello ${runner.first_name}, Welcome to our monthly email.`,
+	};
+	helloEmail.push(singleEmail);
+});
 console.log(helloEmail);
 
 // Problem 3 - Return name of highest donation.
